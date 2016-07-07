@@ -47,7 +47,7 @@ setMethod("onDestroy", "DBIConnection", function(object) {
 #' @export
 #' @rdname object
 setMethod("onValidate", "DBIConnection", function(object) {
-  check <- dbGetQuery(object, "SELECT 1")
+  check <- dbGetQuery(object, "VALUES 1")
   df <- data.frame(1)
   names(df) <- "1"
   (check == df)[1,]
